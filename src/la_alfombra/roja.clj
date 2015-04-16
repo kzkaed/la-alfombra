@@ -7,5 +7,25 @@
 
 
 (defn color [input]
-  (println input))
+  (cons input '()))
+
+(defn color-nil [input]
+  (cons input nil))
+
+(not nil)
+
+(def who-atom (atom :caterpiller))
+(reset! la-alfombra.roja/who-atom :chrysalis)
+
+(defn change [state]
+  (case state
+    :caterpiller :chrysalis
+    :chrysalis :butterfly
+    :butterfly))
+
+(def counter (atom 0))
+(dotimes [_ 5] (swap! counter inc))
+  
+
+
 
