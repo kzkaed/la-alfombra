@@ -19,3 +19,7 @@
   (testing "add a color to list"
            (is (not= '("blue") (color-nil "dog")))))
 
+(deftest build-test
+  (testing "build a list of numbers"
+           (is (= '(5 5) (build 5)))))
+

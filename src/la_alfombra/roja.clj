@@ -26,6 +26,10 @@
 (def counter (atom 0))
 (dotimes [_ 5] (swap! counter inc))
   
+(let [n 5]
+  (future (dotimes [_ n] (swap! counter inc)))
+  (future (dotimes [_ n] (swap! counter inc)))
+  (future (dotimes [_ n] (swap! counter inc))))
 
-
-
+(defn build [x]
+ (cons x (cons x nil)))
